@@ -18,7 +18,7 @@ class PostViewModel : ViewModel() {
     var endpoint = apiInterface.create(APIInterface::class.java)
     var postsLiveData = MutableLiveData<List<Post>>()
     var post = MutableLiveData<Post>()
-    var comments = MutableLiveData<List<Comment>>()
+    var commentsLiveData = MutableLiveData<List<Comment>>()
 
 
      fun getPosts(){
@@ -47,10 +47,10 @@ class PostViewModel : ViewModel() {
 
     fun getComments(id: String){
         GlobalScope.launch(Dispatchers.Main) {
-            val response = endpoint.getPost(id)
+            val response = endpoint.getComments(id)
             if (response.isSuccessful) {
-                val postBody = response.body()
-                post.postValue(postBody)
+                val commentsBody = response.body()
+                commentsLiveData.postValue(commentsBody)
             } else {
                 Log.i("Tesx", "Deu BO")
             }
