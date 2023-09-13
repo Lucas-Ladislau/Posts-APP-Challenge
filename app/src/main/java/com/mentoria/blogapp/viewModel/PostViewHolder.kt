@@ -16,9 +16,13 @@ class PostViewHolder(
         binding.postTitle.text = postItem.title
         binding.description.text = postItem.body
 
+//        O que é melhor passar a informação pela activity ou
+//        consumir a api novamente porém diretamente para o id do post "post/1"
         binding.postCardContent.setOnClickListener(){
             val postDescription = Intent(context, PostDescription::class.java)
             postDescription.putExtra("id", postItem.id)
+            postDescription.putExtra("title", postItem.title)
+            postDescription.putExtra("body", postItem.body)
             context.startActivity(postDescription)
         }
     }
