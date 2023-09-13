@@ -1,5 +1,6 @@
 package com.mentoria.blogapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -35,6 +36,11 @@ class PostDescription : AppCompatActivity() {
             postViewModel.getComments(idPost)
         }
         setCommentsRecyclerView()
+
+        binding.voltar.setOnClickListener(){
+            val home = Intent(this, MainActivity::class.java)
+            startActivity(home)
+        }
     }
 
     private fun setCommentsRecyclerView() {
