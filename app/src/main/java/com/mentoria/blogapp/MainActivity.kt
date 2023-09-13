@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         postViewModel = ViewModelProvider(this).get(PostViewModel::class.java)
+
         postViewModel.getPosts()
         setRecyclerView()
     }

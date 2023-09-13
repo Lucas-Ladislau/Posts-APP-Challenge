@@ -12,7 +12,7 @@ class PostAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         val from = LayoutInflater.from(parent.context)
         val binding = FragmentCardPostBinding.inflate(from, parent, false)
-        return PostViewHolder(binding)
+        return PostViewHolder(parent.context, binding)
     }
 
     override fun getItemCount(): Int = posts.size
