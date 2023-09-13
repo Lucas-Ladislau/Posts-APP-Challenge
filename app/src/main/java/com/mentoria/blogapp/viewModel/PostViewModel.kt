@@ -31,6 +31,29 @@ class PostViewModel : ViewModel() {
                 Log.i("Tesx", "Deu BO")
             }
         }
+    }
 
+    fun getPost(id: String){
+        GlobalScope.launch(Dispatchers.Main) {
+            val response = endpoint.getPost(id)
+            if (response.isSuccessful) {
+                val postBody = response.body()
+                post.postValue(postBody)
+            } else {
+                Log.i("Tesx", "Deu BO")
+            }
+        }
+    }
+
+    fun getComments(id: String){
+        GlobalScope.launch(Dispatchers.Main) {
+            val response = endpoint.getPost(id)
+            if (response.isSuccessful) {
+                val postBody = response.body()
+                post.postValue(postBody)
+            } else {
+                Log.i("Tesx", "Deu BO")
+            }
+        }
     }
 }
