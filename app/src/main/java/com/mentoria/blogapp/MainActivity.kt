@@ -2,6 +2,7 @@ package com.mentoria.blogapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mentoria.blogapp.databinding.ActivityMainBinding
@@ -17,6 +18,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.shimmerView.startShimmer()
+
         postViewModel = ViewModelProvider(this).get(PostViewModel::class.java)
 
         postViewModel.getPosts()
@@ -29,6 +33,9 @@ class MainActivity : AppCompatActivity() {
                 layoutManager = LinearLayoutManager(applicationContext)
                 adapter = PostAdapter(it)
             }
+        binding.shimmerView.stopShimmer()
+        binding.shimmerView.hideShimmer()
+        binding.shimmerView.isVisible = false
         }
     }
 }
