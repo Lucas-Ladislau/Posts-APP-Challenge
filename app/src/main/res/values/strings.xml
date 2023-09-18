@@ -3,4 +3,7 @@
     <string name="user">Username</string>
     <string name="email">ls@gm.op</string>
     <string name="comment">comentário</string>
+    <string name="comments">Comments</string>
+    <string name="title_post">Title Post</string>
+    <string name="description">description</string>
 </resources>
