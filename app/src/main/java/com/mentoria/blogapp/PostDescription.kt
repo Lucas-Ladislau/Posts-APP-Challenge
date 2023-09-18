@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,6 +22,8 @@ class PostDescription : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPostDescriptionBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.shimmerComment.startShimmer()
 
         postViewModel = ViewModelProvider(this).get(PostViewModel::class.java)
 
@@ -49,6 +52,10 @@ class PostDescription : AppCompatActivity() {
                 layoutManager = LinearLayoutManager(applicationContext)
                 adapter = CommentAdapter(it)
             }
+            binding.shimmerComment.stopShimmer()
+            binding.shimmerComment.hideShimmer()
+            binding.shimmerComment.isVisible = false
         }
+
     }
 }
