@@ -16,6 +16,7 @@
         android:id="@+id/postTitleContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/logo_color"
         android:textSize="30sp"
         android:text="@string/title_post"
         android:layout_marginTop="10dp"
