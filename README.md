@@ -1,4 +1,5 @@
 # Posts-APP-Challenge
+Integrando um app Android com uma API 
 Sabemos que a comunicação com API pode demorar um tempo, e por isso o utilizador deve receber algum tipo de feedback para entender o que está acontecendo, a forma mais normal de fazer isso é exibir um loading enquanto a resposta é carregada.
 
 Além disso, vamos introduzir o conceito de navegação em telas, e ter mais do que uma Activity no nosso app.
